@@ -1,0 +1,1328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mapgis.com.cn/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mapgis.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mapgis.com.cn/">
+      <s:element name="DCLocaltionQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSearchValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageIndexForShow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="bIsBlur" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCLocaltionQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCLocaltionQueryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCRedLineQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageIndexForShow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCRedLineQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCRedLineQueryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCHotPointQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputAtt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliter1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliter2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dots" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCHotPointQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCHotPointQueryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCGetImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="layername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCGetImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCGetImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryKeyValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputAtt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliter1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliter2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageIndexForShow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSelectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSpatialType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dots" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRadius" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bound" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAtt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryKeyValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCQueryKeyValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryTF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTFH" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryTFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCQueryTFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionNames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputAtts" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliters1" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliters2" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageIndexForShow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="total" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="cacheRegions" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSelectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSpatialType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dots" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRadius" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bound" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DCQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCQueryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQueryResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionNames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputAtts" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliters1" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliters2" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageIndexForShow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="total" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="cacheRegions" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSelectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSpatialType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dots" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRadius" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bound" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQueryResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQueryResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryAtt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputAtt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSelectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSpatialType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dots" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRadius" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bound" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryAttResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCQueryAttResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryAttValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputAtt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageIndexForShow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSelectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSpatialType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dots" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRadius" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bound" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAtt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryAttValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCQueryAttValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCDeleteImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="layername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCDeleteImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DCDeleteImageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SGFullTextSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSearchValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageIndexForShow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SGFullTextSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SGFullTextSearchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveQuerySolution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strQuerySolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCmd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLabel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveQuerySolutionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveQuerySolutionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteQuerySolution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteQuerySolutionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteQuerySolutionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRuleBySubject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subjectName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRuleBySubjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRuleBySubjectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearBySubjectAndRegionCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="regionCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearBySubjectAndRegionCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYearBySubjectAndRegionCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttByInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputAtt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliter1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliter2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttByInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttByInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFeatureGeometry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFeatureGeometryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFeatureGeometryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCIndexAtt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSelectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSpatialType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dots" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRadius" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifGetParentRegionCode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCIndexAttResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCIndexAttResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputAtt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliter1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliter2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageIndex" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="attName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputAtt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliter1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spliter2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="classifyAttNameArr" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="classifyAttValueArr" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="classifyWhereArr" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="classifyModeArr" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="statisticsAttNameArr" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="statisticsAliasAttNameArr" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="statisticsModeArr" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStatisticsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatisticsInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubjcectFromDataDicTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSubjcectFromDataDicTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubjcectFromDataDicTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataConnecBySubject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataConnecBySubjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataConnecBySubjectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetBufferQueryParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDots" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBufferDis" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBufferMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBufferType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetBufferQueryParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetBufferQueryParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCadaApprove4YZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDJNOs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCadaApprove4YZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCadaApprove4YZResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryAttValueAndBound">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputAtt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageIndexForShow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSelectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSpatialType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dots" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRadius" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bound" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAtt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryAttValueAndBoundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCQueryAttValueAndBoundResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCTestQuery">
+        <s:complexType />
+      </s:element>
+      <s:element name="DCTestQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCTestQueryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryAlias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strLayerShortNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DCQueryAliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DCQueryAliasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DCLocaltionQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:DCLocaltionQuery" />
+  </wsdl:message>
+  <wsdl:message name="DCLocaltionQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:DCLocaltionQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCRedLineQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:DCRedLineQuery" />
+  </wsdl:message>
+  <wsdl:message name="DCRedLineQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:DCRedLineQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCHotPointQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:DCHotPointQuery" />
+  </wsdl:message>
+  <wsdl:message name="DCHotPointQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:DCHotPointQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCGetImageSoapIn">
+    <wsdl:part name="parameters" element="tns:DCGetImage" />
+  </wsdl:message>
+  <wsdl:message name="DCGetImageSoapOut">
+    <wsdl:part name="parameters" element="tns:DCGetImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryKeyValueSoapIn">
+    <wsdl:part name="parameters" element="tns:DCQueryKeyValue" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryKeyValueSoapOut">
+    <wsdl:part name="parameters" element="tns:DCQueryKeyValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryTFSoapIn">
+    <wsdl:part name="parameters" element="tns:DCQueryTF" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryTFSoapOut">
+    <wsdl:part name="parameters" element="tns:DCQueryTFResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:DCQuery" />
+  </wsdl:message>
+  <wsdl:message name="DCQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:DCQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQueryResult" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQueryResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryAttSoapIn">
+    <wsdl:part name="parameters" element="tns:DCQueryAtt" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryAttSoapOut">
+    <wsdl:part name="parameters" element="tns:DCQueryAttResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryAttValueSoapIn">
+    <wsdl:part name="parameters" element="tns:DCQueryAttValue" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryAttValueSoapOut">
+    <wsdl:part name="parameters" element="tns:DCQueryAttValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCDeleteImageSoapIn">
+    <wsdl:part name="parameters" element="tns:DCDeleteImage" />
+  </wsdl:message>
+  <wsdl:message name="DCDeleteImageSoapOut">
+    <wsdl:part name="parameters" element="tns:DCDeleteImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SGFullTextSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:SGFullTextSearch" />
+  </wsdl:message>
+  <wsdl:message name="SGFullTextSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:SGFullTextSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveQuerySolutionSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveQuerySolution" />
+  </wsdl:message>
+  <wsdl:message name="SaveQuerySolutionSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveQuerySolutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteQuerySolutionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteQuerySolution" />
+  </wsdl:message>
+  <wsdl:message name="DeleteQuerySolutionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteQuerySolutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRuleBySubjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRuleBySubject" />
+  </wsdl:message>
+  <wsdl:message name="GetRuleBySubjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRuleBySubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYearBySubjectAndRegionCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYearBySubjectAndRegionCode" />
+  </wsdl:message>
+  <wsdl:message name="GetYearBySubjectAndRegionCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYearBySubjectAndRegionCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttByInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttByInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAttByInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttByInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFeatureGeometrySoapIn">
+    <wsdl:part name="parameters" element="tns:GetFeatureGeometry" />
+  </wsdl:message>
+  <wsdl:message name="GetFeatureGeometrySoapOut">
+    <wsdl:part name="parameters" element="tns:GetFeatureGeometryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCIndexAttSoapIn">
+    <wsdl:part name="parameters" element="tns:DCIndexAtt" />
+  </wsdl:message>
+  <wsdl:message name="DCIndexAttSoapOut">
+    <wsdl:part name="parameters" element="tns:DCIndexAttResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttValue" />
+  </wsdl:message>
+  <wsdl:message name="GetAttValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatisticsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatisticsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjcectFromDataDicTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubjcectFromDataDicTable" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjcectFromDataDicTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubjcectFromDataDicTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataConnecBySubjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataConnecBySubject" />
+  </wsdl:message>
+  <wsdl:message name="GetDataConnecBySubjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataConnecBySubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetBufferQueryParamSoapIn">
+    <wsdl:part name="parameters" element="tns:SetBufferQueryParam" />
+  </wsdl:message>
+  <wsdl:message name="SetBufferQueryParamSoapOut">
+    <wsdl:part name="parameters" element="tns:SetBufferQueryParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCadaApprove4YZSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCadaApprove4YZ" />
+  </wsdl:message>
+  <wsdl:message name="QueryCadaApprove4YZSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCadaApprove4YZResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryAttValueAndBoundSoapIn">
+    <wsdl:part name="parameters" element="tns:DCQueryAttValueAndBound" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryAttValueAndBoundSoapOut">
+    <wsdl:part name="parameters" element="tns:DCQueryAttValueAndBoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCTestQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:DCTestQuery" />
+  </wsdl:message>
+  <wsdl:message name="DCTestQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:DCTestQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryAliasSoapIn">
+    <wsdl:part name="parameters" element="tns:DCQueryAlias" />
+  </wsdl:message>
+  <wsdl:message name="DCQueryAliasSoapOut">
+    <wsdl:part name="parameters" element="tns:DCQueryAliasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QuerySoap">
+    <wsdl:operation name="DCLocaltionQuery">
+      <wsdl:input message="tns:DCLocaltionQuerySoapIn" />
+      <wsdl:output message="tns:DCLocaltionQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCRedLineQuery">
+      <wsdl:input message="tns:DCRedLineQuerySoapIn" />
+      <wsdl:output message="tns:DCRedLineQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCHotPointQuery">
+      <wsdl:input message="tns:DCHotPointQuerySoapIn" />
+      <wsdl:output message="tns:DCHotPointQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCGetImage">
+      <wsdl:input message="tns:DCGetImageSoapIn" />
+      <wsdl:output message="tns:DCGetImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryKeyValue">
+      <wsdl:input message="tns:DCQueryKeyValueSoapIn" />
+      <wsdl:output message="tns:DCQueryKeyValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryTF">
+      <wsdl:input message="tns:DCQueryTFSoapIn" />
+      <wsdl:output message="tns:DCQueryTFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCQuery">
+      <wsdl:input message="tns:DCQuerySoapIn" />
+      <wsdl:output message="tns:DCQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryResult">
+      <wsdl:input message="tns:GetQueryResultSoapIn" />
+      <wsdl:output message="tns:GetQueryResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAtt">
+      <wsdl:input message="tns:DCQueryAttSoapIn" />
+      <wsdl:output message="tns:DCQueryAttSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAttValue">
+      <wsdl:input message="tns:DCQueryAttValueSoapIn" />
+      <wsdl:output message="tns:DCQueryAttValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCDeleteImage">
+      <wsdl:input message="tns:DCDeleteImageSoapIn" />
+      <wsdl:output message="tns:DCDeleteImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SGFullTextSearch">
+      <wsdl:input message="tns:SGFullTextSearchSoapIn" />
+      <wsdl:output message="tns:SGFullTextSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveQuerySolution">
+      <wsdl:input message="tns:SaveQuerySolutionSoapIn" />
+      <wsdl:output message="tns:SaveQuerySolutionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuerySolution">
+      <wsdl:input message="tns:DeleteQuerySolutionSoapIn" />
+      <wsdl:output message="tns:DeleteQuerySolutionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleBySubject">
+      <wsdl:input message="tns:GetRuleBySubjectSoapIn" />
+      <wsdl:output message="tns:GetRuleBySubjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubjectAndRegionCode">
+      <wsdl:input message="tns:GetYearBySubjectAndRegionCodeSoapIn" />
+      <wsdl:output message="tns:GetYearBySubjectAndRegionCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttByInfo">
+      <wsdl:input message="tns:GetAttByInfoSoapIn" />
+      <wsdl:output message="tns:GetAttByInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeatureGeometry">
+      <wsdl:input message="tns:GetFeatureGeometrySoapIn" />
+      <wsdl:output message="tns:GetFeatureGeometrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCIndexAtt">
+      <wsdl:input message="tns:DCIndexAttSoapIn" />
+      <wsdl:output message="tns:DCIndexAttSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttValue">
+      <wsdl:input message="tns:GetAttValueSoapIn" />
+      <wsdl:output message="tns:GetAttValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsInfo">
+      <wsdl:input message="tns:GetStatisticsInfoSoapIn" />
+      <wsdl:output message="tns:GetStatisticsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjcectFromDataDicTable">
+      <wsdl:input message="tns:GetSubjcectFromDataDicTableSoapIn" />
+      <wsdl:output message="tns:GetSubjcectFromDataDicTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataConnecBySubject">
+      <wsdl:input message="tns:GetDataConnecBySubjectSoapIn" />
+      <wsdl:output message="tns:GetDataConnecBySubjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetBufferQueryParam">
+      <wsdl:input message="tns:SetBufferQueryParamSoapIn" />
+      <wsdl:output message="tns:SetBufferQueryParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCadaApprove4YZ">
+      <wsdl:input message="tns:QueryCadaApprove4YZSoapIn" />
+      <wsdl:output message="tns:QueryCadaApprove4YZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAttValueAndBound">
+      <wsdl:input message="tns:DCQueryAttValueAndBoundSoapIn" />
+      <wsdl:output message="tns:DCQueryAttValueAndBoundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCTestQuery">
+      <wsdl:input message="tns:DCTestQuerySoapIn" />
+      <wsdl:output message="tns:DCTestQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAlias">
+      <wsdl:input message="tns:DCQueryAliasSoapIn" />
+      <wsdl:output message="tns:DCQueryAliasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QuerySoap" type="tns:QuerySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DCLocaltionQuery">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCLocaltionQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCRedLineQuery">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCRedLineQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCHotPointQuery">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCHotPointQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCGetImage">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCGetImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryKeyValue">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCQueryKeyValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryTF">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCQueryTF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQuery">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryResult">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetQueryResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAtt">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCQueryAtt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAttValue">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCQueryAttValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCDeleteImage">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCDeleteImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SGFullTextSearch">
+      <soap:operation soapAction="http://www.mapgis.com.cn/SGFullTextSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveQuerySolution">
+      <soap:operation soapAction="http://www.mapgis.com.cn/SaveQuerySolution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuerySolution">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DeleteQuerySolution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleBySubject">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetRuleBySubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubjectAndRegionCode">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetYearBySubjectAndRegionCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttByInfo">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAttByInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeatureGeometry">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetFeatureGeometry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCIndexAtt">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCIndexAtt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttValue">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAttValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsInfo">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetStatisticsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjcectFromDataDicTable">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetSubjcectFromDataDicTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataConnecBySubject">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetDataConnecBySubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetBufferQueryParam">
+      <soap:operation soapAction="http://www.mapgis.com.cn/SetBufferQueryParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCadaApprove4YZ">
+      <soap:operation soapAction="http://www.mapgis.com.cn/QueryCadaApprove4YZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAttValueAndBound">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCQueryAttValueAndBound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCTestQuery">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCTestQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAlias">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DCQueryAlias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QuerySoap12" type="tns:QuerySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DCLocaltionQuery">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCLocaltionQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCRedLineQuery">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCRedLineQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCHotPointQuery">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCHotPointQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCGetImage">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCGetImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryKeyValue">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCQueryKeyValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryTF">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCQueryTF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQuery">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryResult">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetQueryResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAtt">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCQueryAtt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAttValue">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCQueryAttValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCDeleteImage">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCDeleteImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SGFullTextSearch">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/SGFullTextSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveQuerySolution">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/SaveQuerySolution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuerySolution">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DeleteQuerySolution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleBySubject">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetRuleBySubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubjectAndRegionCode">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetYearBySubjectAndRegionCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttByInfo">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAttByInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeatureGeometry">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetFeatureGeometry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCIndexAtt">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCIndexAtt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttValue">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAttValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsInfo">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetStatisticsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjcectFromDataDicTable">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetSubjcectFromDataDicTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataConnecBySubject">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetDataConnecBySubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetBufferQueryParam">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/SetBufferQueryParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCadaApprove4YZ">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/QueryCadaApprove4YZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAttValueAndBound">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCQueryAttValueAndBound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCTestQuery">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCTestQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCQueryAlias">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DCQueryAlias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Query">
+    <wsdl:port name="QuerySoap" binding="tns:QuerySoap">
+      <soap:address location="http://192.168.21.100/igslandservice/Query.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QuerySoap12" binding="tns:QuerySoap12">
+      <soap12:address location="http://192.168.21.100/igslandservice/Query.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

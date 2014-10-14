@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mapgis.com.cn/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mapgis.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mapgis.com.cn/">
+      <s:element name="GetSubjectList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSubjectListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubjectListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegionCodeBySYSL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDataYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strScale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLayerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegionCodeBySYSLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegionCodeBySYSLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearBySubject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearBySubjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYearBySubjectResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearBySubjectEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearBySubjectExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYearBySubjectExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearBySubjectList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSolution" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearBySubjectListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYearBySubjectListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSYDYearsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSYDYearsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSYDYearsInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearsBySubject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDots" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearsBySubjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYearsBySubjectResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDataFieldBySolutionName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strField" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataFieldBySolutionNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataFieldBySolutionNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubjectByYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataYear" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubjectByYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubjectByYearResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubjectName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubjectNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubjectNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubjectPublishInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSubjectPublishInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubjectPublishInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInputAttValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTableField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTableField2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhere" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInputAttValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInputAttValueResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInputAttName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTableField" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInputAttNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInputAttNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllRegionCodeFromLayerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strScale" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllRegionCodeFromLayerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllRegionCodeFromLayerInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSubjectFromLayerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strScale" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSubjectFromLayerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSubjectFromLayerInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strScale" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllYearResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllScale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strYear" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllScaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllScaleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllScaleStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strYear" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllScaleStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllScaleStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSubjectListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubjectList" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjectListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubjectListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionCodeBySYSLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegionCodeBySYSL" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionCodeBySYSLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegionCodeBySYSLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYearBySubjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYearBySubject" />
+  </wsdl:message>
+  <wsdl:message name="GetYearBySubjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYearBySubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYearBySubjectExSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYearBySubjectEx" />
+  </wsdl:message>
+  <wsdl:message name="GetYearBySubjectExSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYearBySubjectExResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYearBySubjectListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYearBySubjectList" />
+  </wsdl:message>
+  <wsdl:message name="GetYearBySubjectListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYearBySubjectListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSYDYearsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSYDYearsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetJSYDYearsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSYDYearsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYearsBySubjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYearsBySubject" />
+  </wsdl:message>
+  <wsdl:message name="GetYearsBySubjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYearsBySubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataFieldBySolutionNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataFieldBySolutionName" />
+  </wsdl:message>
+  <wsdl:message name="GetDataFieldBySolutionNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataFieldBySolutionNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjectByYearSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubjectByYear" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjectByYearSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubjectByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjectNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubjectName" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjectNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubjectNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjectPublishInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubjectPublishInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjectPublishInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubjectPublishInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInputAttValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInputAttValue" />
+  </wsdl:message>
+  <wsdl:message name="GetInputAttValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInputAttValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInputAttNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInputAttName" />
+  </wsdl:message>
+  <wsdl:message name="GetInputAttNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInputAttNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRegionCodeFromLayerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllRegionCodeFromLayerInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRegionCodeFromLayerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllRegionCodeFromLayerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSubjectFromLayerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSubjectFromLayerInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSubjectFromLayerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSubjectFromLayerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllYearSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllYear" />
+  </wsdl:message>
+  <wsdl:message name="GetAllYearSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllScaleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllScale" />
+  </wsdl:message>
+  <wsdl:message name="GetAllScaleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllScaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllScaleStrSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllScaleStr" />
+  </wsdl:message>
+  <wsdl:message name="GetAllScaleStrSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllScaleStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BaseDataInfoSoap">
+    <wsdl:operation name="GetSubjectList">
+      <wsdl:input message="tns:GetSubjectListSoapIn" />
+      <wsdl:output message="tns:GetSubjectListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionCodeBySYSL">
+      <wsdl:input message="tns:GetRegionCodeBySYSLSoapIn" />
+      <wsdl:output message="tns:GetRegionCodeBySYSLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubject">
+      <wsdl:input message="tns:GetYearBySubjectSoapIn" />
+      <wsdl:output message="tns:GetYearBySubjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubjectEx">
+      <wsdl:input message="tns:GetYearBySubjectExSoapIn" />
+      <wsdl:output message="tns:GetYearBySubjectExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubjectList">
+      <wsdl:input message="tns:GetYearBySubjectListSoapIn" />
+      <wsdl:output message="tns:GetYearBySubjectListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSYDYearsInfo">
+      <wsdl:input message="tns:GetJSYDYearsInfoSoapIn" />
+      <wsdl:output message="tns:GetJSYDYearsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYearsBySubject">
+      <wsdl:input message="tns:GetYearsBySubjectSoapIn" />
+      <wsdl:output message="tns:GetYearsBySubjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataFieldBySolutionName">
+      <wsdl:input message="tns:GetDataFieldBySolutionNameSoapIn" />
+      <wsdl:output message="tns:GetDataFieldBySolutionNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectByYear">
+      <wsdl:input message="tns:GetSubjectByYearSoapIn" />
+      <wsdl:output message="tns:GetSubjectByYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectName">
+      <wsdl:input message="tns:GetSubjectNameSoapIn" />
+      <wsdl:output message="tns:GetSubjectNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectPublishInfo">
+      <wsdl:input message="tns:GetSubjectPublishInfoSoapIn" />
+      <wsdl:output message="tns:GetSubjectPublishInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInputAttValue">
+      <wsdl:input message="tns:GetInputAttValueSoapIn" />
+      <wsdl:output message="tns:GetInputAttValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInputAttName">
+      <wsdl:input message="tns:GetInputAttNameSoapIn" />
+      <wsdl:output message="tns:GetInputAttNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegionCodeFromLayerInfo">
+      <wsdl:input message="tns:GetAllRegionCodeFromLayerInfoSoapIn" />
+      <wsdl:output message="tns:GetAllRegionCodeFromLayerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubjectFromLayerInfo">
+      <wsdl:input message="tns:GetAllSubjectFromLayerInfoSoapIn" />
+      <wsdl:output message="tns:GetAllSubjectFromLayerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllYear">
+      <wsdl:input message="tns:GetAllYearSoapIn" />
+      <wsdl:output message="tns:GetAllYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllScale">
+      <wsdl:input message="tns:GetAllScaleSoapIn" />
+      <wsdl:output message="tns:GetAllScaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllScaleStr">
+      <wsdl:input message="tns:GetAllScaleStrSoapIn" />
+      <wsdl:output message="tns:GetAllScaleStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BaseDataInfoSoap" type="tns:BaseDataInfoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSubjectList">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetSubjectList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionCodeBySYSL">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetRegionCodeBySYSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubject">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetYearBySubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubjectEx">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetYearBySubjectEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubjectList">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetYearBySubjectList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSYDYearsInfo">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetJSYDYearsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearsBySubject">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetYearsBySubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataFieldBySolutionName">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetDataFieldBySolutionName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectByYear">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetSubjectByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectName">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetSubjectName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectPublishInfo">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetSubjectPublishInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInputAttValue">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetInputAttValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInputAttName">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetInputAttName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegionCodeFromLayerInfo">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAllRegionCodeFromLayerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubjectFromLayerInfo">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAllSubjectFromLayerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllYear">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAllYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllScale">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAllScale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllScaleStr">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAllScaleStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BaseDataInfoSoap12" type="tns:BaseDataInfoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSubjectList">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetSubjectList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionCodeBySYSL">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetRegionCodeBySYSL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubject">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetYearBySubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubjectEx">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetYearBySubjectEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearBySubjectList">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetYearBySubjectList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSYDYearsInfo">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetJSYDYearsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearsBySubject">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetYearsBySubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataFieldBySolutionName">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetDataFieldBySolutionName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectByYear">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetSubjectByYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectName">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetSubjectName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectPublishInfo">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetSubjectPublishInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInputAttValue">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetInputAttValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInputAttName">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetInputAttName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegionCodeFromLayerInfo">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAllRegionCodeFromLayerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubjectFromLayerInfo">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAllSubjectFromLayerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllYear">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAllYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllScale">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAllScale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllScaleStr">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAllScaleStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BaseDataInfo">
+    <wsdl:port name="BaseDataInfoSoap" binding="tns:BaseDataInfoSoap">
+      <soap:address location="http://192.168.21.100/igslandservice/BaseDataInfo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BaseDataInfoSoap12" binding="tns:BaseDataInfoSoap12">
+      <soap12:address location="http://192.168.21.100/igslandservice/BaseDataInfo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

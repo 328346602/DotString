@@ -1,0 +1,141 @@
+﻿using System;
+using System.Web;
+using System.Data;
+//using System.Data.OracleClient;
+using System.Data.SqlClient;
+using System.Data.Common;
+using System.Text;
+using System.Collections.Generic;
+
+namespace CM.LC
+{
+    /// <summary>
+    /// 数据库通用操作类
+    /// </summary>
+    public class DatabaseSQL
+    {
+        public new SqlConnection Conn = new SqlConnection();
+
+        public DatabaseSQL()
+        {
+            //测试方法
+            //string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["connectionString"].ToString();
+            //中地使用方法
+            string connStr = System.Configuration.ConfigurationManager.AppSettings["connectionString"].ToString();
+            Conn = new SqlConnection(connStr);
+        }
+
+        public DatabaseSQL(string constr)
+        {
+            Conn = new SqlConnection(constr);
+        }
+
+        #region 打开数据库连接
+        /// <summary>
+        /// 打开数据库连接
+        /// </summary>
+        private void Open()
+        {
+            //打开数据库连接
+            if (Conn.State == ConnectionState.Closed)
+            {
+                try
+                {
+                    //打开数据库连接
+                    Conn.Open();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+        }
+        #endregion
+
+        #region 关闭数据库连接
+        /// <summary>
+        /// 关闭数据库连接
+        /// </summary>
+        private void Close()
+        {
+            //判断连接的状态是否已经打开
+            if (Conn.State == ConnectionState.Open)
+            {
+                Conn.Close();
+            }
+        }
+        #endregion
+
+        #region 执行带参数的SQL语句
+        /// <summary>
+        /// 执行不带参数的SQL语句
+        /// </summary>
+        /// <param name="sql">SQL语句</param>     
+        public void ExecuteSql(string sql)
+        {
+            SqlCommand cmd = new SqlCommand(sql, Conn);
+            try
+            {
+                Open();
+                cmd.ExecuteNonQuery();
+                Close();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Close();
+                throw e;
+            }
+        }
+        #endregion
+
+        #region 执行SQL语句，返回数据到DataSet中
+        /// <summary>
+        /// 执行SQL语句，返回数据到DataSet中
+        /// </summary>
+        /// <param name="sql">sql语句</param>
+        /// <returns>返回DataSet</returns>
+        public DataSet GetDataSet(string sql)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                Open();//打开数据连接
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, Conn);
+                
+                adapter.Fill(ds);
+            }
+            catch//(Exception ex)
+            {
+            }
+            finally
+            {
+                Close();//关闭数据库连接
+            }
+            return ds;
+        }
+        #endregion
+
+        #region 执行SQL语句，返回数据到自定义DataSet中
+        /// <summary>
+        /// 执行SQL语句，返回数据到DataSet中
+        /// </summary>
+        /// <param name="sql">sql语句</param>
+        /// <param name="DataSetName">自定义返回的DataSet表名</param>
+        /// <returns>返回DataSet</returns>
+        public DataSet GetDataSet(string sql, string DataSetName)
+        {
+            DataSet ds = new DataSet();
+            Open();//打开数据连接
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, Conn);
+            adapter.Fill(ds, DataSetName);
+            Close();//关闭数据库连接
+            return ds;
+        }
+        #endregion
+
+
+    }
+
+
+}

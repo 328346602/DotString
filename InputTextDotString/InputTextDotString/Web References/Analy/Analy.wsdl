@@ -1,0 +1,2407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mapgis.com.cn/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mapgis.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mapgis.com.cn/">
+      <s:element name="ExecuteAnaly">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotDataYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotScale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredSubjectList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredDataYearList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredScaleList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAlyType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifReturnRes" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strList" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dLeftDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dRightDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="nKnobType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="str6xFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointPM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointMU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointGQ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteAnalyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteAnalyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteAnalyNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClassInfos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTargets" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAlyType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifReturnRes" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strList" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dLeftDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dRightDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="nKnobType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="str6xFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointPM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointMU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointGQ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteAnalyNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteAnalyNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteMapAnaly">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClassInfos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTargets" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAlyType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifReturnRes" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strList" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dLeftDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dRightDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="nKnobType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="str6xFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointPM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointMU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointGQ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteMapAnalyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteMapAnalyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAnalyStatResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAnalyStatResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAnalyStatResultResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAnalyStatResultNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDirEx" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAnalyStatResultNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAnalyStatResultNewResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAnalys">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="caseNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="areaNo" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteAnalysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAnalysResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteXMLStatResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="caseNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteXMLStatResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteXMLStatResultResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyStatResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTableName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyStatResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyStatResultResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyStatResultNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDirEx" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyStatResultNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyStatResultNewResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAnalyParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotDataYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotScale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredSubjectList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredDataYearList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredScaleList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alyType" type="tns:EnumAnalyType" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifReturnRes" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifShow" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="EnumAnalyType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Polygon" />
+          <s:enumeration value="Point_Buffer" />
+          <s:enumeration value="Line_Buffer" />
+          <s:enumeration value="Polygon_Buffer" />
+          <s:enumeration value="CarPatrol" />
+          <s:enumeration value="Import6xFile" />
+          <s:enumeration value="MapAnaly" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SetAnalyParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetAnalyParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewSetAnalyParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClassInfos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTarget" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alyType" type="tns:EnumAnalyType" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifReturnRes" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifShow" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dispTargetList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewSetAnalyParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewSetAnalyParamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAnalyParamEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClassInfos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTarget" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alyType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifReturnRes" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifShow" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dispTargetList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAnalyParamExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetAnalyParamExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAnalyParamNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotDataYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotScale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredSubjectList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredDataYearList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredScaleList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alyType" type="tns:EnumAnalyType" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifReturnRes" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifShow" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDispSubjectList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDispDataYearList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDispScaleList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAnalyParamNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetAnalyParamNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoveredRegionCodeByGUID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoveredRegionCodeByGUIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCoveredRegionCodeByGUIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoveredRegionCodeByGUIDNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoveredRegionCodeByGUIDNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCoveredRegionCodeByGUIDNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPolygonCovered">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDots" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoverRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoverSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoverDataYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoverScale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoverLayerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPolygonCoveredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsPolygonCoveredResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPolygonCoveredNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDots" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotOrderBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPolygonCoveredNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsPolygonCoveredNewResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoveredRegionCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDots" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSubjectType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifBuffer" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="bufferType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bufferMode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="leftDis" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="rightDis" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredSubjectTypeList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredDataYearList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredScaleList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="srcSRSID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoveredRegionCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCoveredRegionCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoveredRegionCodeNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDots" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifBuffer" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="bufferType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bufferMode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="leftDis" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="rightDis" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClassInfos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="srcSRSID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoveredRegionCodeNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCoveredRegionCodeNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPoint" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectTypeList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDataYearList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Temp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sYear" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TempResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAnalyResultForMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDataYearList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPoint" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResultForMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyResultForMobileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResultNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPoint" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectTypeList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDirEx" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDataYearList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResultNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyResultNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GDLStata">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrYears" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GDLStataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDLStataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PZGStata">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrYears" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PZGStataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PZGStataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatMDBPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatMDBPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatMDBPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatMDBPathNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDirEx" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatMDBPathNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatMDBPathNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsStatMDBExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDirEx" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsStatMDBExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsStatMDBExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyResXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResXMLNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDirEx" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResXMLNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyResXMLNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutTableScale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDataYear" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutTableScaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOutTableScaleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutTableScaleArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectTypeArr" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDataYear" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutTableScaleArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOutTableScaleArrayResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAnalyTableInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyTableInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyTableInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyTableInfoNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDirEx" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyTableInfoNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyTableInfoNewResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteAnalyForWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotDataYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotScale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredSubjectList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredDataYearList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCoveredScaleList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAlyType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifReturnRes" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strList" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dLeftDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dRightDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="nKnobType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="str6xFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointPM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointMU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointGQ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAnalySolution" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteAnalyForWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteAnalyForWebResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuotaCtrlAnalyResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDotSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOrderBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClassInfos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTargets" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAlyType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIfReturnRes" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sList" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dLeftDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dRightDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="iKnobType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="s6xFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPointPM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPointMU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPointGQ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAnalySolution" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuotaCtrlAnalyResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuotaCtrlAnalyResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteAnalyNewForWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClassInfos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTargets" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAlyType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifReturnRes" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strList" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dLeftDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dRightDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="nKnobType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="str6xFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointPM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointMU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointGQ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAnalySolution" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteAnalyNewForWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteAnalyNewForWebResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteMapAnalyForWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotRegionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDotString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="classInfos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTargets" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAlyType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ifReturnRes" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strList" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dLeftDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dRightDistance" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="nKnobType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="str6xFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointPM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointMU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPointGQ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAnalySolution" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteMapAnalyForWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteMapAnalyForWebResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResultInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPoint" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProjectName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyResultInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyResultInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsTableExistInDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsTableExistInDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsTableExistInDBResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PolygonsRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDots" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nSrsID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInputAtt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDistance" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PolygonsRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PolygonsRelationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyLayerResultInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAreaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDirEx" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubjectList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnalyLayerResultInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnalyLayerResultInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateBlockNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDots" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalculateBlockNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateBlockNumResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintTKQMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDots" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dWidth" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dHeight" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintTKQMapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintTKQMapResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTargetByFlowID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="flowID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTargetByFlowIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTargetByFlowIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OutputMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDots" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMapNames" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iHeight" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="percent" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="red" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="green" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="blue" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OutputMapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OutputMapResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MineAnalysis_YZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDots" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDCQSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDCQInputAtts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sKDSolutionName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sKDInputAtts" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dDistance" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MineAnalysis_YZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MineAnalysis_YZResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestAnaly">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestAnalyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestAnalyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ExecuteAnalySoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteAnaly" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAnalySoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteAnalyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAnalyNewSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteAnalyNew" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAnalyNewSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteAnalyNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteMapAnalySoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteMapAnaly" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteMapAnalySoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteMapAnalyResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnalyStatResultSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAnalyStatResult" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnalyStatResultSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAnalyStatResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnalyStatResultNewSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAnalyStatResultNew" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnalyStatResultNewSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAnalyStatResultNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnalysSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAnalys" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnalysSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAnalysResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteXMLStatResultSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteXMLStatResult" />
+  </wsdl:message>
+  <wsdl:message name="DeleteXMLStatResultSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteXMLStatResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyStatResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyStatResult" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyStatResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyStatResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyStatResultNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyStatResultNew" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyStatResultNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyStatResultNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAnalyParamSoapIn">
+    <wsdl:part name="parameters" element="tns:SetAnalyParam" />
+  </wsdl:message>
+  <wsdl:message name="SetAnalyParamSoapOut">
+    <wsdl:part name="parameters" element="tns:SetAnalyParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewSetAnalyParamSoapIn">
+    <wsdl:part name="parameters" element="tns:NewSetAnalyParam" />
+  </wsdl:message>
+  <wsdl:message name="NewSetAnalyParamSoapOut">
+    <wsdl:part name="parameters" element="tns:NewSetAnalyParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAnalyParamExSoapIn">
+    <wsdl:part name="parameters" element="tns:SetAnalyParamEx" />
+  </wsdl:message>
+  <wsdl:message name="SetAnalyParamExSoapOut">
+    <wsdl:part name="parameters" element="tns:SetAnalyParamExResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAnalyParamNewSoapIn">
+    <wsdl:part name="parameters" element="tns:SetAnalyParamNew" />
+  </wsdl:message>
+  <wsdl:message name="SetAnalyParamNewSoapOut">
+    <wsdl:part name="parameters" element="tns:SetAnalyParamNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCoveredRegionCodeByGUIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCoveredRegionCodeByGUID" />
+  </wsdl:message>
+  <wsdl:message name="GetCoveredRegionCodeByGUIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCoveredRegionCodeByGUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCoveredRegionCodeByGUIDNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCoveredRegionCodeByGUIDNew" />
+  </wsdl:message>
+  <wsdl:message name="GetCoveredRegionCodeByGUIDNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCoveredRegionCodeByGUIDNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPolygonCoveredSoapIn">
+    <wsdl:part name="parameters" element="tns:IsPolygonCovered" />
+  </wsdl:message>
+  <wsdl:message name="IsPolygonCoveredSoapOut">
+    <wsdl:part name="parameters" element="tns:IsPolygonCoveredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPolygonCoveredNewSoapIn">
+    <wsdl:part name="parameters" element="tns:IsPolygonCoveredNew" />
+  </wsdl:message>
+  <wsdl:message name="IsPolygonCoveredNewSoapOut">
+    <wsdl:part name="parameters" element="tns:IsPolygonCoveredNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCoveredRegionCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCoveredRegionCode" />
+  </wsdl:message>
+  <wsdl:message name="GetCoveredRegionCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCoveredRegionCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCoveredRegionCodeNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCoveredRegionCodeNew" />
+  </wsdl:message>
+  <wsdl:message name="GetCoveredRegionCodeNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCoveredRegionCodeNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyResult" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="TempSoapIn">
+    <wsdl:part name="parameters" element="tns:Temp" />
+  </wsdl:message>
+  <wsdl:message name="TempSoapOut">
+    <wsdl:part name="parameters" element="tns:TempResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResultForMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyResultForMobile" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResultForMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyResultForMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResultNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyResultNew" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResultNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyResultNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GDLStataSoapIn">
+    <wsdl:part name="parameters" element="tns:GDLStata" />
+  </wsdl:message>
+  <wsdl:message name="GDLStataSoapOut">
+    <wsdl:part name="parameters" element="tns:GDLStataResponse" />
+  </wsdl:message>
+  <wsdl:message name="PZGStataSoapIn">
+    <wsdl:part name="parameters" element="tns:PZGStata" />
+  </wsdl:message>
+  <wsdl:message name="PZGStataSoapOut">
+    <wsdl:part name="parameters" element="tns:PZGStataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatMDBPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatMDBPath" />
+  </wsdl:message>
+  <wsdl:message name="GetStatMDBPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatMDBPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatMDBPathNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatMDBPathNew" />
+  </wsdl:message>
+  <wsdl:message name="GetStatMDBPathNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatMDBPathNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsStatMDBExistSoapIn">
+    <wsdl:part name="parameters" element="tns:IsStatMDBExist" />
+  </wsdl:message>
+  <wsdl:message name="IsStatMDBExistSoapOut">
+    <wsdl:part name="parameters" element="tns:IsStatMDBExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyResXML" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyResXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResXMLNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyResXMLNew" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResXMLNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyResXMLNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutTableScaleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOutTableScale" />
+  </wsdl:message>
+  <wsdl:message name="GetOutTableScaleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOutTableScaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutTableScaleArraySoapIn">
+    <wsdl:part name="parameters" element="tns:GetOutTableScaleArray" />
+  </wsdl:message>
+  <wsdl:message name="GetOutTableScaleArraySoapOut">
+    <wsdl:part name="parameters" element="tns:GetOutTableScaleArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyTableInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyTableInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyTableInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyTableInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyTableInfoNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyTableInfoNew" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyTableInfoNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyTableInfoNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAnalyForWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteAnalyForWeb" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAnalyForWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteAnalyForWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuotaCtrlAnalyResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuotaCtrlAnalyResult" />
+  </wsdl:message>
+  <wsdl:message name="GetQuotaCtrlAnalyResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuotaCtrlAnalyResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAnalyNewForWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteAnalyNewForWeb" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAnalyNewForWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteAnalyNewForWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteMapAnalyForWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteMapAnalyForWeb" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteMapAnalyForWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteMapAnalyForWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResultInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyResultInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyResultInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyResultInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsTableExistInDBSoapIn">
+    <wsdl:part name="parameters" element="tns:IsTableExistInDB" />
+  </wsdl:message>
+  <wsdl:message name="IsTableExistInDBSoapOut">
+    <wsdl:part name="parameters" element="tns:IsTableExistInDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="PolygonsRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:PolygonsRelation" />
+  </wsdl:message>
+  <wsdl:message name="PolygonsRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:PolygonsRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyLayerResultInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnalyLayerResultInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAnalyLayerResultInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnalyLayerResultInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateBlockNumSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateBlockNum" />
+  </wsdl:message>
+  <wsdl:message name="CalculateBlockNumSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateBlockNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintTKQMapSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintTKQMap" />
+  </wsdl:message>
+  <wsdl:message name="PrintTKQMapSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintTKQMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTargetByFlowIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTargetByFlowID" />
+  </wsdl:message>
+  <wsdl:message name="GetTargetByFlowIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTargetByFlowIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="OutputMapSoapIn">
+    <wsdl:part name="parameters" element="tns:OutputMap" />
+  </wsdl:message>
+  <wsdl:message name="OutputMapSoapOut">
+    <wsdl:part name="parameters" element="tns:OutputMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="MineAnalysis_YZSoapIn">
+    <wsdl:part name="parameters" element="tns:MineAnalysis_YZ" />
+  </wsdl:message>
+  <wsdl:message name="MineAnalysis_YZSoapOut">
+    <wsdl:part name="parameters" element="tns:MineAnalysis_YZResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestAnalySoapIn">
+    <wsdl:part name="parameters" element="tns:TestAnaly" />
+  </wsdl:message>
+  <wsdl:message name="TestAnalySoapOut">
+    <wsdl:part name="parameters" element="tns:TestAnalyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AnalySoap">
+    <wsdl:operation name="ExecuteAnaly">
+      <wsdl:input message="tns:ExecuteAnalySoapIn" />
+      <wsdl:output message="tns:ExecuteAnalySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnalyNew">
+      <wsdl:input message="tns:ExecuteAnalyNewSoapIn" />
+      <wsdl:output message="tns:ExecuteAnalyNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteMapAnaly">
+      <wsdl:input message="tns:ExecuteMapAnalySoapIn" />
+      <wsdl:output message="tns:ExecuteMapAnalySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnalyStatResult">
+      <wsdl:input message="tns:DeleteAnalyStatResultSoapIn" />
+      <wsdl:output message="tns:DeleteAnalyStatResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnalyStatResultNew">
+      <wsdl:input message="tns:DeleteAnalyStatResultNewSoapIn" />
+      <wsdl:output message="tns:DeleteAnalyStatResultNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnalys">
+      <wsdl:input message="tns:DeleteAnalysSoapIn" />
+      <wsdl:output message="tns:DeleteAnalysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteXMLStatResult">
+      <wsdl:input message="tns:DeleteXMLStatResultSoapIn" />
+      <wsdl:output message="tns:DeleteXMLStatResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyStatResult">
+      <wsdl:input message="tns:GetAnalyStatResultSoapIn" />
+      <wsdl:output message="tns:GetAnalyStatResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyStatResultNew">
+      <wsdl:input message="tns:GetAnalyStatResultNewSoapIn" />
+      <wsdl:output message="tns:GetAnalyStatResultNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAnalyParam">
+      <wsdl:input message="tns:SetAnalyParamSoapIn" />
+      <wsdl:output message="tns:SetAnalyParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewSetAnalyParam">
+      <wsdl:input message="tns:NewSetAnalyParamSoapIn" />
+      <wsdl:output message="tns:NewSetAnalyParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAnalyParamEx">
+      <wsdl:input message="tns:SetAnalyParamExSoapIn" />
+      <wsdl:output message="tns:SetAnalyParamExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAnalyParamNew">
+      <wsdl:input message="tns:SetAnalyParamNewSoapIn" />
+      <wsdl:output message="tns:SetAnalyParamNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCodeByGUID">
+      <wsdl:input message="tns:GetCoveredRegionCodeByGUIDSoapIn" />
+      <wsdl:output message="tns:GetCoveredRegionCodeByGUIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCodeByGUIDNew">
+      <wsdl:input message="tns:GetCoveredRegionCodeByGUIDNewSoapIn" />
+      <wsdl:output message="tns:GetCoveredRegionCodeByGUIDNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPolygonCovered">
+      <wsdl:input message="tns:IsPolygonCoveredSoapIn" />
+      <wsdl:output message="tns:IsPolygonCoveredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPolygonCoveredNew">
+      <wsdl:input message="tns:IsPolygonCoveredNewSoapIn" />
+      <wsdl:output message="tns:IsPolygonCoveredNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCode">
+      <wsdl:input message="tns:GetCoveredRegionCodeSoapIn" />
+      <wsdl:output message="tns:GetCoveredRegionCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCodeNew">
+      <wsdl:input message="tns:GetCoveredRegionCodeNewSoapIn" />
+      <wsdl:output message="tns:GetCoveredRegionCodeNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResult">
+      <wsdl:input message="tns:GetAnalyResultSoapIn" />
+      <wsdl:output message="tns:GetAnalyResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Temp">
+      <wsdl:input message="tns:TempSoapIn" />
+      <wsdl:output message="tns:TempSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResultForMobile">
+      <wsdl:input message="tns:GetAnalyResultForMobileSoapIn" />
+      <wsdl:output message="tns:GetAnalyResultForMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResultNew">
+      <wsdl:input message="tns:GetAnalyResultNewSoapIn" />
+      <wsdl:output message="tns:GetAnalyResultNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GDLStata">
+      <wsdl:input message="tns:GDLStataSoapIn" />
+      <wsdl:output message="tns:GDLStataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PZGStata">
+      <wsdl:input message="tns:PZGStataSoapIn" />
+      <wsdl:output message="tns:PZGStataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatMDBPath">
+      <wsdl:input message="tns:GetStatMDBPathSoapIn" />
+      <wsdl:output message="tns:GetStatMDBPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatMDBPathNew">
+      <wsdl:input message="tns:GetStatMDBPathNewSoapIn" />
+      <wsdl:output message="tns:GetStatMDBPathNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsStatMDBExist">
+      <wsdl:input message="tns:IsStatMDBExistSoapIn" />
+      <wsdl:output message="tns:IsStatMDBExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResXML">
+      <wsdl:input message="tns:GetAnalyResXMLSoapIn" />
+      <wsdl:output message="tns:GetAnalyResXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResXMLNew">
+      <wsdl:input message="tns:GetAnalyResXMLNewSoapIn" />
+      <wsdl:output message="tns:GetAnalyResXMLNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutTableScale">
+      <wsdl:input message="tns:GetOutTableScaleSoapIn" />
+      <wsdl:output message="tns:GetOutTableScaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutTableScaleArray">
+      <wsdl:input message="tns:GetOutTableScaleArraySoapIn" />
+      <wsdl:output message="tns:GetOutTableScaleArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyTableInfo">
+      <wsdl:input message="tns:GetAnalyTableInfoSoapIn" />
+      <wsdl:output message="tns:GetAnalyTableInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyTableInfoNew">
+      <wsdl:input message="tns:GetAnalyTableInfoNewSoapIn" />
+      <wsdl:output message="tns:GetAnalyTableInfoNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnalyForWeb">
+      <wsdl:input message="tns:ExecuteAnalyForWebSoapIn" />
+      <wsdl:output message="tns:ExecuteAnalyForWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuotaCtrlAnalyResult">
+      <wsdl:input message="tns:GetQuotaCtrlAnalyResultSoapIn" />
+      <wsdl:output message="tns:GetQuotaCtrlAnalyResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnalyNewForWeb">
+      <wsdl:input message="tns:ExecuteAnalyNewForWebSoapIn" />
+      <wsdl:output message="tns:ExecuteAnalyNewForWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteMapAnalyForWeb">
+      <wsdl:input message="tns:ExecuteMapAnalyForWebSoapIn" />
+      <wsdl:output message="tns:ExecuteMapAnalyForWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResultInfo">
+      <wsdl:input message="tns:GetAnalyResultInfoSoapIn" />
+      <wsdl:output message="tns:GetAnalyResultInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTableExistInDB">
+      <wsdl:input message="tns:IsTableExistInDBSoapIn" />
+      <wsdl:output message="tns:IsTableExistInDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PolygonsRelation">
+      <wsdl:input message="tns:PolygonsRelationSoapIn" />
+      <wsdl:output message="tns:PolygonsRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyLayerResultInfo">
+      <wsdl:input message="tns:GetAnalyLayerResultInfoSoapIn" />
+      <wsdl:output message="tns:GetAnalyLayerResultInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateBlockNum">
+      <wsdl:input message="tns:CalculateBlockNumSoapIn" />
+      <wsdl:output message="tns:CalculateBlockNumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintTKQMap">
+      <wsdl:input message="tns:PrintTKQMapSoapIn" />
+      <wsdl:output message="tns:PrintTKQMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTargetByFlowID">
+      <wsdl:input message="tns:GetTargetByFlowIDSoapIn" />
+      <wsdl:output message="tns:GetTargetByFlowIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OutputMap">
+      <wsdl:input message="tns:OutputMapSoapIn" />
+      <wsdl:output message="tns:OutputMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MineAnalysis_YZ">
+      <wsdl:input message="tns:MineAnalysis_YZSoapIn" />
+      <wsdl:output message="tns:MineAnalysis_YZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestAnaly">
+      <wsdl:input message="tns:TestAnalySoapIn" />
+      <wsdl:output message="tns:TestAnalySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AnalySoap" type="tns:AnalySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteAnaly">
+      <soap:operation soapAction="http://www.mapgis.com.cn/ExecuteAnaly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnalyNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/ExecuteAnalyNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteMapAnaly">
+      <soap:operation soapAction="http://www.mapgis.com.cn/ExecuteMapAnaly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnalyStatResult">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DeleteAnalyStatResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnalyStatResultNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DeleteAnalyStatResultNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnalys">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DeleteAnalys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteXMLStatResult">
+      <soap:operation soapAction="http://www.mapgis.com.cn/DeleteXMLStatResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyStatResult">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyStatResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyStatResultNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyStatResultNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAnalyParam">
+      <soap:operation soapAction="http://www.mapgis.com.cn/SetAnalyParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewSetAnalyParam">
+      <soap:operation soapAction="http://www.mapgis.com.cn/NewSetAnalyParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAnalyParamEx">
+      <soap:operation soapAction="http://www.mapgis.com.cn/SetAnalyParamEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAnalyParamNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/SetAnalyParamNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCodeByGUID">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetCoveredRegionCodeByGUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCodeByGUIDNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetCoveredRegionCodeByGUIDNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPolygonCovered">
+      <soap:operation soapAction="http://www.mapgis.com.cn/IsPolygonCovered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPolygonCoveredNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/IsPolygonCoveredNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCode">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetCoveredRegionCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCodeNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetCoveredRegionCodeNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResult">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Temp">
+      <soap:operation soapAction="http://www.mapgis.com.cn/Temp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResultForMobile">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyResultForMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResultNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyResultNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GDLStata">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GDLStata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PZGStata">
+      <soap:operation soapAction="http://www.mapgis.com.cn/PZGStata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatMDBPath">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetStatMDBPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatMDBPathNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetStatMDBPathNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsStatMDBExist">
+      <soap:operation soapAction="http://www.mapgis.com.cn/IsStatMDBExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResXML">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyResXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResXMLNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyResXMLNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutTableScale">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetOutTableScale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutTableScaleArray">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetOutTableScaleArray" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyTableInfo">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyTableInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyTableInfoNew">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyTableInfoNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnalyForWeb">
+      <soap:operation soapAction="http://www.mapgis.com.cn/ExecuteAnalyForWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuotaCtrlAnalyResult">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetQuotaCtrlAnalyResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnalyNewForWeb">
+      <soap:operation soapAction="http://www.mapgis.com.cn/ExecuteAnalyNewForWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteMapAnalyForWeb">
+      <soap:operation soapAction="http://www.mapgis.com.cn/ExecuteMapAnalyForWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResultInfo">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyResultInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTableExistInDB">
+      <soap:operation soapAction="http://www.mapgis.com.cn/IsTableExistInDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolygonsRelation">
+      <soap:operation soapAction="http://www.mapgis.com.cn/PolygonsRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyLayerResultInfo">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetAnalyLayerResultInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateBlockNum">
+      <soap:operation soapAction="http://www.mapgis.com.cn/CalculateBlockNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintTKQMap">
+      <soap:operation soapAction="http://www.mapgis.com.cn/PrintTKQMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTargetByFlowID">
+      <soap:operation soapAction="http://www.mapgis.com.cn/GetTargetByFlowID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OutputMap">
+      <soap:operation soapAction="http://www.mapgis.com.cn/OutputMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MineAnalysis_YZ">
+      <soap:operation soapAction="http://www.mapgis.com.cn/MineAnalysis_YZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestAnaly">
+      <soap:operation soapAction="http://www.mapgis.com.cn/TestAnaly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AnalySoap12" type="tns:AnalySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteAnaly">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/ExecuteAnaly" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnalyNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/ExecuteAnalyNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteMapAnaly">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/ExecuteMapAnaly" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnalyStatResult">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DeleteAnalyStatResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnalyStatResultNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DeleteAnalyStatResultNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnalys">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DeleteAnalys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteXMLStatResult">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/DeleteXMLStatResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyStatResult">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyStatResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyStatResultNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyStatResultNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAnalyParam">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/SetAnalyParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewSetAnalyParam">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/NewSetAnalyParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAnalyParamEx">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/SetAnalyParamEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAnalyParamNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/SetAnalyParamNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCodeByGUID">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetCoveredRegionCodeByGUID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCodeByGUIDNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetCoveredRegionCodeByGUIDNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPolygonCovered">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/IsPolygonCovered" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPolygonCoveredNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/IsPolygonCoveredNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCode">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetCoveredRegionCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoveredRegionCodeNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetCoveredRegionCodeNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResult">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Temp">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/Temp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResultForMobile">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyResultForMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResultNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyResultNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GDLStata">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GDLStata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PZGStata">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/PZGStata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatMDBPath">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetStatMDBPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatMDBPathNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetStatMDBPathNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsStatMDBExist">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/IsStatMDBExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResXML">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyResXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResXMLNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyResXMLNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutTableScale">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetOutTableScale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutTableScaleArray">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetOutTableScaleArray" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyTableInfo">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyTableInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyTableInfoNew">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyTableInfoNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnalyForWeb">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/ExecuteAnalyForWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuotaCtrlAnalyResult">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetQuotaCtrlAnalyResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnalyNewForWeb">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/ExecuteAnalyNewForWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteMapAnalyForWeb">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/ExecuteMapAnalyForWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyResultInfo">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyResultInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTableExistInDB">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/IsTableExistInDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolygonsRelation">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/PolygonsRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnalyLayerResultInfo">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetAnalyLayerResultInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateBlockNum">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/CalculateBlockNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintTKQMap">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/PrintTKQMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTargetByFlowID">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/GetTargetByFlowID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OutputMap">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/OutputMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MineAnalysis_YZ">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/MineAnalysis_YZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestAnaly">
+      <soap12:operation soapAction="http://www.mapgis.com.cn/TestAnaly" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Analy">
+    <wsdl:port name="AnalySoap" binding="tns:AnalySoap">
+      <soap:address location="http://192.168.21.100/igslandservice/Analy.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AnalySoap12" binding="tns:AnalySoap12">
+      <soap12:address location="http://192.168.21.100/igslandservice/Analy.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

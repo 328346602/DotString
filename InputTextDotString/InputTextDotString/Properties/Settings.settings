@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InputTextDotString.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="InputTextDotString_BaseDataInfo_BaseDataInfo" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.21.100/igslandservice/BaseDataInfo.asmx</Value>
+    </Setting>
+    <Setting Name="InputTextDotString_Query_Query" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.21.100/igslandservice/Query.asmx</Value>
+    </Setting>
+    <Setting Name="InputTextDotString_WebReference_Feature" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.21.100/IGSLandService/Feature.asmx</Value>
+    </Setting>
+    <Setting Name="InputTextDotString_Analy_Analy" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.21.100/igslandservice/Analy.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

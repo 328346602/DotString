@@ -1,0 +1,84 @@
+.tablezw  /*政务表table的样式*/
+{
+	margin-top:20px;
+	border: 1px solid #b8c9d6; 
+	border-collapse:collapse;
+	font-size:12px;
+	.TABLECENTER:expression(this.align="center",cellSpacing="0",cellPadding="0",border="1");
+    text-align: center;
+}
+.tablezw td
+{
+	border:1px solid #b8c9d6;
+}
+
+.tablezwtitle   /*政务表 标题 样式*/
+{
+		color: #003380;
+	    font-weight: bold;
+	    border:1px solid;
+	    text-align:center;
+	    line-height:25px;
+	    height:25px;
+	   	background-image: url(images/white-top-bottom.gif);
+		color: navy;
+		background-repeat: repeat-x;
+	  
+}
+.inputbox
+{
+	border-left:1px solid #6699cc;
+	border-top:1px solid #6699cc;
+	border-bottom:1px solid #bcdbfc;
+	border-right:1px solid #bcdbfc;
+	font-family: Tahoma, Verdana, Arial, "新宋体", "宋体";
+	font-size: 12px;
+	background-color:expression(this.readOnly?"#e0eaf5":"#f5fafe");
+	padding:2px 0px 2px 1px;
+	vertical-align:middle;
+    text-align: left;
+} 
+.tbbutton   /*按钮样式*/
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    width: 73px;
+    font-size:12px;
+    font-weight:600;
+    background-image: url('images/btnmiddle1.png');
+    cursor: hand;
+    background-color: transparent;
+    height: 16px;
+}
+
+.tbbutton:hover
+{
+    width: 73px;
+    height: 22px;
+    background-image: url(images/btnmiddle2.png);
+    border: none;
+    cursor: hand;
+    background-color: transparent;
+}
+.datagrid       /*datagrid样式*/
+{
+    BORDER-RIGHT: lightblue 1px solid;
+    BORDER-TOP: lightblue 1px solid;
+    BORDER-LEFT: lightblue 1px solid;
+    WIDTH: 95%;
+    BORDER-BOTTOM: lightblue 1px solid;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BORDER-COLLAPSE: separate
+}
+.dg_header
+{
+    BORDER-RIGHT: lightblue 1px solid;
+    BORDER-TOP: lightblue 1px solid;
+    FONT-WEIGHT: bold;
+	height:18.75pt;
+    BORDER-LEFT: lightblue 1px solid;
+    COLOR: white;
+    BORDER-BOTTOM: lightblue 1px solid;
+    BACKGROUND-COLOR: #66CCFF 
+}
